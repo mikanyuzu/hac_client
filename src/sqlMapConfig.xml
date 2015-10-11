@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"
+        "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+
+    <!--
+        sqlMapClientの最適化を行う（この<settings>エレメントは任意）
+        maxRequests : 一度にSQLを実行するスレッドの最大数
+                    (maxRequests > maxTransactions*10)
+        maxSessions : 一時にアクティブになることができるセッション数
+                    (maxTransactions < maxRequests < maxRequests)
+        maxTransactions : 一度にSqlMapClient.startTransaction()に入ることができるスレッドの最大数
+                        （maxTransactions < maxSessions && maxTransactions << maxRequests）
+        cacheModelsEnabled : キャッシュを有効にするかどうか
+        lazyLoadingEnabled : 遅延ローディングを有効にするかどうか
+        enhancementEnabled : lazyLoadingの拡張？
+        useStatementNamespaces : prepared statementsのローカルキャッシュを使用するかどうか
+        defaultStatementTimeout : ？よくわからない
+        classInfoCacheEnabled : キャッシュされたクラスを使用するかどうか
+        statementCachingEnabled : prepared statementsのローカルキャッシュを使用するかどうか
+
+        ちなみに以下の値はすべてデフォルト値です。
+    -->
+    <settings
+        maxRequests="512"
+        maxSessions="128"
+        maxTransactions="32"
+        cacheModelsEnabled="true"
+        lazyLoadingEnabled="true"
+        enhancementEnabled="true"
+        useStatementNamespaces="false"
+        classInfoCacheEnabled="true"
+        statementCachingEnabled="true"
+    />
+
+    <!-- sqlMapファイルの参照-->
+    <sqlMap resource="resource/sql/app_ver_mng.xml" />
+    <sqlMap resource="resource/sql/hub_custmer_mst.xml" />
+    <sqlMap resource="resource/sql/infomation_schema.xml" />
+    <sqlMap resource="resource/sql/org_mst.xml" />
+    <sqlMap resource="resource/sql/setting_status.xml" />
+    <sqlMap resource="resource/sql/store_mst.xml" />
+    <sqlMap resource="resource/sql/custmer_detail.xml" />
+</sqlMapConfig>

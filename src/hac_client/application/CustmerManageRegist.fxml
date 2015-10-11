@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root prefHeight="816.0" prefWidth="1024.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <fx:include fx:id="commonMenuArea" source="Inc_menu_common.fxml" />
+      <Pane layoutX="27.0" layoutY="232.0" prefHeight="3.0" prefWidth="978.0" style="-fx-background-color: #4682b4;" />
+      <Hyperlink layoutX="262.0" layoutY="200.0" onAction="#clickRegist" text="登録する" />
+      <Text fill="STEELBLUE" layoutX="27.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="顧客管理　新規登録" wrappingWidth="189.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="27.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="氏名（姓）" />
+      <Text layoutX="27.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="氏名（名）" />
+      <TextField fx:id="custmerNameFirst" layoutX="171.0" layoutY="248.0" prefHeight="27.0" prefWidth="156.0" />
+      <TextField fx:id="custmerNameLast" layoutX="171.0" layoutY="281.0" prefHeight="27.0" prefWidth="156.0" />
+      <Text layoutX="460.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="＊ふりがな（姓）" />
+      <TextField fx:id="custmerNameFirstRead" layoutX="609.0" layoutY="248.0" prefHeight="27.0" prefWidth="246.0" />
+      <Text layoutX="460.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="＊ふりがな（名）" />
+      <TextField fx:id="custmerAddress2" layoutX="609.0" layoutY="348.0" prefHeight="27.0" prefWidth="246.0" />
+      <Text layoutX="27.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="性別" />
+      <ComboBox fx:id="custmerGender" layoutX="171.0" layoutY="315.0" prefWidth="150.0" />
+      <Text layoutX="460.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="年齢" />
+      <TextField fx:id="custmerAge" layoutX="609.0" layoutY="315.0" prefHeight="27.0" prefWidth="119.0" />
+      <Text layoutX="27.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="住所（都道府県）" />
+      <ComboBox fx:id="custmerAddress1" layoutX="171.0" layoutY="348.0" prefWidth="150.0" />
+      <Text layoutX="460.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="住所（市町村区）" />
+      <Text layoutX="27.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="住所（その他）" />
+      <TextField fx:id="custmerAddress3" layoutX="170.0" layoutY="382.0" prefHeight="27.0" prefWidth="684.0" />
+      <Text layoutX="27.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="＋TEL（自宅）" />
+      <TextField fx:id="custmerTel" layoutX="170.0" layoutY="416.0" prefHeight="27.0" prefWidth="246.0" />
+      <Text layoutX="460.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="＋TEL（携帯）" />
+      <TextField fx:id="custmerTelCell" layoutX="609.0" layoutY="416.0" prefHeight="27.0" prefWidth="246.0" />
+      <TextField fx:id="custmerEmail" layoutX="170.0" layoutY="450.0" prefHeight="27.0" prefWidth="684.0" />
+      <Text layoutX="27.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eメール（個人）" />
+      <Text layoutX="28.0" layoutY="511.0" strokeType="OUTSIDE" strokeWidth="0.0" text="勤務先（会社名）" />
+      <TextField fx:id="custmerEmployment" layoutX="170.0" layoutY="493.0" prefHeight="27.0" prefWidth="445.0" />
+      <Text layoutX="28.0" layoutY="543.0" strokeType="OUTSIDE" strokeWidth="0.0" text="勤務先（連絡先）" />
+      <TextField fx:id="custmerEmploymentTel" layoutX="170.0" layoutY="525.0" prefHeight="27.0" prefWidth="246.0" />
+      <Text layoutX="27.0" layoutY="576.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Eメール（会社）" />
+      <TextField fx:id="custmerEmploymentEmail" layoutX="170.0" layoutY="558.0" prefHeight="27.0" prefWidth="684.0" />
+      <Text layoutX="28.0" layoutY="620.0" strokeType="OUTSIDE" strokeWidth="0.0" text="メールマガジン配信先" />
+      <ComboBox fx:id="sendEmailType" layoutX="171.0" layoutY="602.0" prefWidth="150.0" />
+      <Text layoutX="27.0" layoutY="652.0" strokeType="OUTSIDE" strokeWidth="0.0" text="初回来店日" />
+      <Text layoutX="27.0" layoutY="684.0" strokeType="OUTSIDE" strokeWidth="0.0" text="カード会員種類" />
+      <ComboBox fx:id="memberType" layoutX="170.0" layoutY="666.0" prefWidth="150.0" />
+      <Text layoutX="26.0" layoutY="715.0" strokeType="OUTSIDE" strokeWidth="0.0" text="カード会員番号" />
+      <TextField fx:id="memberDist" layoutX="171.0" layoutY="697.0" prefHeight="27.0" prefWidth="156.0" />
+      <TextField fx:id="custmerNameLastRead" layoutX="609.0" layoutY="281.0" prefHeight="27.0" prefWidth="246.0" />
+      <DatePicker fx:id="fristVisitDate" layoutX="170.0" layoutY="634.0" />
+   </children>
+</fx:root>

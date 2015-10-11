@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 
+	アプリケーションメッセージ定義ファイル 
+-->
+<messages>
+	<message innerCode="hac_client.controller.InitSetting1Controller:00001">
+		<id>0005</id>
+		<outerCode>E00005</outerCode>
+		<view-message>会社情報の登録がありません。入力を見直してください。
+		</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="hac_client.controller.InitSetting2Controller:00001">
+		<id>0006</id>
+		<outerCode>E00006</outerCode>
+		<view-message>会社名を入力してください。
+		</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="hac_client.controller.InitSetting2Controller:00002">
+		<id>0007</id>
+		<outerCode>E00007</outerCode>
+		<view-message>店舗名を入力してください。
+		</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="hac_client.controller.InitSetting2Controller:00003">
+		<id>0008</id>
+		<outerCode>E00008</outerCode>
+		<view-message>連絡先(TEL)を入力してください。
+		</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="hac_client.controller.InitSetting2Controller:00004">
+		<id>0009</id>
+		<outerCode>E00009</outerCode>
+		<view-message>連絡先(メール)を入力してください。
+		</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="hac_client.controller.InitSetting2Controller:00005">
+		<id>0010</id>
+		<outerCode>E00010</outerCode>
+		<view-message>店舗代表者を入力してください。
+		</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="hac_client.controller.EntryLogin:00001">
+		<id>0011</id>
+		<outerCode>E00011</outerCode>
+		<view-message>店舗管理Noを入力してください</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="hac_client.controller.EntryLogin:00002">
+		<id>0012</id>
+		<outerCode>E00012</outerCode>
+		<view-message>ユーザIDを入力してください</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="hac_client.controller.EntryLogin:00003">
+		<id>0013</id>
+		<outerCode>E00013</outerCode>
+		<view-message>パスワードを入力してください</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="hac_client.controller.EntryLogin:00004">
+		<id>0014</id>
+		<outerCode>E00014</outerCode>
+		<view-message>ユーザ情報が存在しません。</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="hac_client.controller.UserSettingController:00001">
+		<id>0015</id>
+		<outerCode>I00015</outerCode>
+		<view-message>ユーザ設定情報を更新しました。</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="hac_client.controller.MenuController:00001">
+		<id>0015</id>
+		<outerCode>I00015</outerCode>
+		<view-message>ログインしました。</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="hac_client.controller.ReserveController:00001">
+		<id>0015</id>
+		<outerCode>W00016</outerCode>
+		<view-message>いづれかの検索項目を入力してください。</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="hac_client.controller.ReserveController:00002">
+		<id>0015</id>
+		<outerCode>I00017</outerCode>
+		<view-message>検索結果は{0}件です。</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="hac_client.controller.ReserveController:00003">
+		<id>0015</id>
+		<outerCode>E00018</outerCode>
+		<view-message>該当する顧客データがありません。</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="hac_client.controller.CustmerController:00001">
+		<id>0015</id>
+		<outerCode>W00016</outerCode>
+		<view-message>いづれかの検索項目を入力してください。</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="hac_client.controller.CustmerController:00002">
+		<id>0015</id>
+		<outerCode>I00017</outerCode>
+		<view-message>検索結果は{0}件です。</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="hac_client.controller.CustmerController:00003">
+		<id>0015</id>
+		<outerCode>E00018</outerCode>
+		<view-message>該当する顧客データがありません。</view-message>
+		<log-message></log-message>
+	</message>
+	
+	<message innerCode="org.hac.remote.AbstractHttpRemoteCall:90001">
+		<id>0016</id>
+		<outerCode>E00016</outerCode>
+		<view-message>リモート呼び出しに失敗しました</view-message>
+		<log-message>リモート呼び出しに失敗しました</log-message>
+	</message>
+</messages>

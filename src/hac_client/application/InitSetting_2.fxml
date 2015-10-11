@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<fx:root prefHeight="482.0" prefWidth="656.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+
+   <children>
+      <Text layoutX="127.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="社内管理ツール初期登録" textAlignment="CENTER" wrappingWidth="341.8340015411377">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <Hyperlink layoutX="479.0" layoutY="375.0" onAction="#registOrg" text="登録する">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Hyperlink>
+      <Text layoutX="129.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="店舗情報を入力してください" />
+      <TextField fx:id="orgName" layoutX="273.0" layoutY="188.0" prefHeight="6.0" prefWidth="169.0" />
+      <Text layoutX="129.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="会社名" wrappingWidth="96.0" />
+      <Text layoutX="129.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="店舗名" wrappingWidth="96.0" />
+      <TextField fx:id="hubName" layoutX="273.0" layoutY="221.0" prefHeight="6.0" prefWidth="169.0" />
+      <Text layoutX="129.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="連絡先(TEL)" wrappingWidth="96.0" />
+      <TextField fx:id="hubTel" layoutX="273.0" layoutY="253.0" prefHeight="6.0" prefWidth="169.0" />
+      <Text layoutX="129.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="連絡先(メール)" wrappingWidth="96.0" />
+      <TextField fx:id="hubMail" layoutX="273.0" layoutY="284.0" prefHeight="6.0" prefWidth="169.0" />
+      <Text layoutX="129.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="店舗代表者" wrappingWidth="96.0" />
+      <TextField fx:id="hubSysUser" layoutX="273.0" layoutY="316.0" prefHeight="6.0" prefWidth="169.0" />
+      <Label fx:id="appMessage" layoutX="129.0" layoutY="141.0" prefHeight="27.0" prefWidth="457.0" />
+   </children>
+</fx:root>

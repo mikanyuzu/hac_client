@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="hac_client.jnlp">
+  <information>
+    <title>hac_client</title>
+    <vendor>sysusr1</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <jfx:javafx-runtime version="8.0+" href="http://javadl.sun.com/webapps/download/GetFile/javafx-latest/windows-i586/javafx2.jnlp"/>
+  </resources>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="lib/hac_client-Preloader.jar" size="3064" download="progress" />
+    <jar href="hac_client.jar" size="16486" download="eager" />
+    <jar href="lib/commons-codec-1.6.jar" size="232771" download="eager" />
+    <jar href="lib/commons-logging-1.1.3.jar" size="62050" download="eager" />
+    <jar href="lib/fluent-hc-4.3.6.jar" size="29979" download="eager" />
+    <jar href="lib/h2-1.4.182.jar" size="1685416" download="eager" />
+    <jar href="lib/httpclient-4.3.6.jar" size="592008" download="eager" />
+    <jar href="lib/httpclient-cache-4.3.6.jar" size="150895" download="eager" />
+    <jar href="lib/httpcore-4.3.3.jar" size="282793" download="eager" />
+    <jar href="lib/httpmime-4.3.6.jar" size="37272" download="eager" />
+    <jar href="lib/log4j-1.2.13.jar" size="358180" download="eager" />
+    <jar href="lib/pop3.jar" size="44410" download="eager" />
+    <jar href="lib/smtp.jar" size="52898" download="eager" />
+    <jar href="lib/spring-aop-3.0.5.RELEASE.jar" size="321190" download="eager" />
+    <jar href="lib/spring-beans-3.0.5.RELEASE.jar" size="555410" download="eager" />
+    <jar href="lib/spring-context-3.0.5.RELEASE.jar" size="668861" download="eager" />
+    <jar href="lib/spring-core-3.0.5.RELEASE.jar" size="382442" download="eager" />
+    <jar href="lib/spring-expression-3.0.5.RELEASE.jar" size="169752" download="eager" />
+    <jar href="lib/spring-tx.jar" size="231173" download="eager" />
+    <jar href="lib/spring.jar" size="2949500" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="hac_client" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="hac_client.application.HacClientMainApplication"  name="hac_client"  preloader-class="hac_client.preloader.hac_client_Preloader"/>
+  <update check="always"/>
+</jnlp>

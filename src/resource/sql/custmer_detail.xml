@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap>
+	<update id="create_table_custmer_detail" >
+		create table custmer_detail (
+			custmer_mng_no char(10) not null,
+			custmer_name_first varchar(12),
+			custmer_name_last varchar(12),
+			custmer_name_first_read varchar(60) not null, 
+			custmer_name_last_read varchar(60) not null,
+			custmer_gender char(1),
+			custmer_age char(3),
+			custmer_address1 char(2),
+			custmer_address2 varchar(10),
+			custmer_address3 varchar(50),
+			custmer_tel char(12)  not null,
+			custmer_tel_cel char(12),
+			custmer_email varchar(50),
+			custmer_employment varchar(50),
+			custmer_employment_tel char(12),
+			custmer_employment_email varchar(5),
+			send_email_type char(1),
+			first_visit_date int(11),
+			custmer_regist_date int(11),
+			member_type char(2),
+			member_dist char(10),
+			create_date int(11),
+			update_date int(11),
+			create_user char(10),
+			update_user char(10),
+			primary key(custmer_mng_no)
+		)
+	</update>
+	
+	<insert id="inert_custmer_detail">
+		insert 
+			into 
+				custmer_detail
+			values (
+				#custmer_mng_no#,
+				#custmer_name_first#,
+				#custmer_name_last#,
+				#custmer_name_first_read#,
+				#custmer_name_last_read#,
+				#custmer_gender#,
+				#custmer_age#,
+				#custmer_address1#,
+				#custmer_address2#,
+				#custmer_address3#,
+				#custmer_tel#,
+				#custmer_tel_cel#,
+				#custmer_email#,
+				#custmer_employment#,
+				#custmer_employment_tel#,
+				#custmer_employment_email#,
+				#send_email_type#,
+				#first_visit_date#,
+				#custmer_regist_date#,
+				#member_type#,
+				#member_dist#,
+				#create_date#,
+				#update_date#,
+				#create_user#,
+				#update_user#
+			) 
+	</insert>
+	
+	<update id="">
+		update 
+			custmer_detail
+		set 
+			update_date = #update_date#
+			,update_user = #update_user#
+		<isNotNull property="custmer_name_first">
+			,custmer_name_first = #custmer_name_first#
+		</isNotNull>
+		<isNotNull property="custmer_name_last">
+			,custmer_name_last = #custmer_name_last#
+		</isNotNull>
+		<isNotNull property="custmer_name_first_read">
+			,custmer_name_first_read = #custmer_name_first_read#
+		</isNotNull>
+		<isNotNull property="custmer_name_last_read">
+			,custmer_name_last_read = #custmer_name_last_read#
+		</isNotNull>
+		<isNotNull property="custmer_gender">
+			,custmer_gender = #custmer_gender#
+		</isNotNull>
+		<isNotNull property="custmer_age">
+			,custmer_age = #custmer_age#
+		</isNotNull>
+		<isNotNull property="custmer_address1">
+			,custmer_address1 = #custmer_address1#
+		</isNotNull>
+		<isNotNull property="custmer_address2">
+			,custmer_address2 = #custmer_address2#
+		</isNotNull>
+		<isNotNull property="custmer_address3">
+			,custmer_address3 = #custmer_address3#
+		</isNotNull>
+		<isNotNull property="custmer_tel">
+			,custmer_tel = #custmer_tel#
+		</isNotNull>
+		<isNotNull property="custmer_tel_cel">
+			,custmer_tel_cel = #custmer_tel_cel#
+		</isNotNull>
+		<isNotNull property="custmer_email">
+			,custmer_email = #custmer_email#
+		</isNotNull>
+		<isNotNull property="custmer_employment">
+			,custmer_employment = #custmer_employment#
+		</isNotNull>
+		<isNotNull property="custmer_employment_tel">
+			,custmer_employment_tel = #custmer_employment_tel#
+		</isNotNull>
+		<isNotNull property="custmer_employment_email">
+			,custmer_employment_email = #custmer_employment_email#
+		</isNotNull>
+		<isNotNull property="send_email_type">
+			,send_email_type = #send_email_type#
+		</isNotNull>
+		<isNotNull property="first_visit_date">
+			,first_visit_date = #first_visit_date#
+		</isNotNull>
+		<isNotNull property="custmer_regist_date">
+			,custmer_regist_date = #custmer_regist_date#
+		</isNotNull>
+		<isNotNull property="member_type">
+			,member_type = #member_type#
+		</isNotNull>
+		<isNotNull property="member_dist">
+			,member_dist = #member_dist#
+		</isNotNull>
+		where 
+			custmer_mng_no = #custmer_mng_no#
+	</update>
+	
+	<select id="select_custmer_detail_by_any" parameterClass="java.util.HashMap"
+		resultClass="java.util.HashMap">
+		select 
+			*
+		from 
+			custmer_detail
+		<dynamic prepend="where">
+			<isNotEmpty prepend="and" property="custmer_name_first_read">
+				custmer_name_first_read like concat('%', #custmer_name_first_read#, '%')
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="custmer_name_last_read">
+				custmer_name_last_read like concat('%', #custmer_name_last_read#, '%')
+			</isNotEmpty>
+			<isNotEmpty prepend="and" property="custmer_tel">
+				(custmer_tel = #custmer_tel# or custmer_tel_cel = #custmer_tel#)
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	<select id="select_custmer_detail_by_custmer_mng_no" parameterClass="java.util.HashMap"
+		resultClass="java.util.HashMap">
+		select
+			*
+		from 
+			custmer_detail
+		where
+			custmer_mng_no = #custmer_mng_no#
+	</select>
+</sqlMap>

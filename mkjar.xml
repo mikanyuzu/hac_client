@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="build" default="makeJar" basedir="./">
+	<!-- ソースファイル -->
+	<property name="dir.src" value="./src">
+	</property>
+
+	<!-- クラスファイル -->
+	<property name="dir.classes" value="./build">
+	</property>
+	
+	<!-- クラスファイル -->
+	<property name="jar.classpath" value="
+		lib/hac_client-Preloader.jar 
+		lib/commons-codec-1.6.jar 
+		lib/commons-logging-1.1.3.jar 
+		lib/fluent-hc-4.3.6.jar 
+		lib/h2-1.4.182.jar
+		lib/httpclient-4.3.6.jar 
+		lib/httpclient-cache-4.3.6.jar 
+		lib/httpcore-4.3.3.jar 
+		lib/httpmime-4.3.6.jar 
+		lib/log4j-1.2.13.jar 
+		lib/pop3.jar 
+		lib/smtp.jar 
+		lib/spring-aop-3.0.5.RELEASE.jar 
+		lib/spring-beans-3.0.5.RELEASE.jar 
+		lib/spring-context-3.0.5.RELEASE.jar 
+		lib/spring-core-3.0.5.RELEASE.jar 
+		lib/spring-expression-3.0.5.RELEASE.jar 
+		lib/spring-tx.jar 
+		lib/spring.jar
+		lib/hessian-3.1.5.jar
+		lib/hacdev.jar
+		lib/ibatis-core-3.0.jar
+		lib/ibatis-sqlmap-2.3.0.jar
+		lib/commons-dbcp.jar
+		lib/commons-pool.jar">
+	</property>
+
+	<!-- クラスパス -->
+	<path id="classpath.all">
+		<fileset dir="./lib/commons/">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="./lib/spring/">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="./lib/ibatis/">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="./lib/">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<!-- コンパイル実行 -->
+	<target name="compile" description="パッケージのコンパイル" depends="cleanup">
+		<echo message="コンパイル実行" />
+		<javac srcdir="${dir.src}" destdir="${dir.classes}" encoding="UTF-8"
+			source="1.8" includeantruntime="false">
+			<!-- クラスパスの指定 -->
+			<classpath refid="classpath.all" />
+			<!-- testパッケージを除く -->
+			<!-- <exclude name="test/**" /> -->
+		</javac>
+		<copy todir="${dir.classes}">
+			<fileset dir="${dir.src}" excludes="**/*.java" />
+		</copy>
+	</target>
+
+	<!-- クラスファイルクリーンアップ -->
+	<target name="cleanup" description="クリーンアップ">
+		<echo message="クリーンアップ実行" />
+		<delete dir="${dir.classes}" />
+		<mkdir dir="${dir.classes}" />
+	</target>
+
+	<!-- JARファイル作成 -->
+	<target name="makeJar" description="JARファイル作成" depends="compile">
+		<echo message="JARファイルを作成・コピー" />
+		<jar basedir="${dir.classes}" destfile="dist/hac_client.jar">
+			<manifest>
+				<attribute name="Main-Class" value="hac_client.EntryStart" />
+				<attribute name="Class-Path" value="${jar.classpath}"/>
+			</manifest>
+		</jar>
+		<delete dir="${dir.classes}" />
+		<!-- <delete file="../hacweb/WEB-INF/lib/hacdev.jar" /> <copy file="hacdev.jar" 
+			todir="../hacweb/WEB-INF/lib"> </copy> -->
+	</target>
+</project>

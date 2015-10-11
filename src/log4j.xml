@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "/org/apache/log4j/xml/log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="conversionPattern" value="%d %t %-5p %c{1} - %m%n" />
+		</layout>
+	</appender>
+	<appender name="FILE" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="logs/application.log" />
+		<param name="maxFileSize" value="3MB" />
+		<param name="maxBackupIndex" value="10" />
+		<param name="datePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="conversionPattern" value="%d %t %-5p %c{1} - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="SQLOUT" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="logs/sql.log" />
+		<param name="maxFileSize" value="3MB" />
+		<param name="maxBackupIndex" value="10" />
+		<param name="datePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="conversionPattern" value="%d %t %-5p %c{1} - %m%n" />
+		</layout>
+	</appender>
+
+	<category name="com.ibatis">
+		<priority value="DEBUG" />
+		<appender-ref ref="SQLOUT" />
+	</category>
+	<category name="java.sql">
+		<priority value="DEBUG" />
+		<appender-ref ref="SQLOUT" />
+	</category>
+	<root>
+		<priority value="INFO" />
+		<appender-ref ref="FILE" />
+	</root>
+	<logger name="org.hac.action.impl">
+		<level value="INFO" />
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</logger>
+	<logger name="org.hac.facade.impl">
+		<level value="INFO" />
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</logger>
+	<logger name="org.hac.service.impl">
+		<level value="INFO" />
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</logger>
+	<logger name="org.hac.dao.impl">
+		<level value="INFO" />
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+		<appender-ref ref="SQLOUT" />
+	</logger>
+</log4j:configuration>

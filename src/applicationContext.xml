@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 
+	spring設定ファイル 
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+	
+	<!-- プロパティ読み込み -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:database.properties</value>
+				<value>classpath:server.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+    <!-- ローカルストレージ接続設定 -->
+    <import resource="resource/system/datasource-config.xml" />
+    
+    <!-- リモート呼び出し設定 -->
+    <import resource="resource/system/remote-config.xml" />
+    
+    <!-- コンポーネントDI設定 -->
+    <import resource="resource/system/component-config.xml" />
+		    
+</beans>
