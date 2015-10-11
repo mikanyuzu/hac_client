@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root prefHeight="815.0" prefWidth="1024.0" style="-fx-font-size: 11px;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="23.0" layoutY="121.0" text="店舗名">
+         <font>
+            <Font size="11.0" />
+         </font></Label>
+      <ComboBox fx:id="hubMngNames" layoutX="98.0" layoutY="117.0" prefHeight="22.0" prefWidth="260.0" />
+      <Label layoutX="23.0" layoutY="174.0" text="ユーザID">
+         <font>
+            <Font size="11.0" />
+         </font></Label>
+      <TextField fx:id="userId" layoutX="98.0" layoutY="171.0" prefHeight="14.0" prefWidth="193.0">
+         <font>
+            <Font size="11.0" />
+         </font></TextField>
+      <Label layoutX="23.0" layoutY="203.0" text="パスワード">
+         <font>
+            <Font size="11.0" />
+         </font></Label>
+      <PasswordField fx:id="passwd" layoutX="98.0" layoutY="199.0" prefHeight="14.0" prefWidth="193.0">
+         <font>
+            <Font size="11.0" />
+         </font></PasswordField>
+      <Label layoutX="20.0" layoutY="20.0" text="社内管理システム　ログイン">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="appMessage" layoutX="109.0" layoutY="59.0" prefHeight="27.0" prefWidth="901.0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Button layoutX="21.0" layoutY="242.0" mnemonicParsing="false" onAction="#clickLogin" style="-fx-background-color: #4682b4;" text="ログイン" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font></Button>
+      <Pane layoutX="14.0" layoutY="55.0" prefHeight="1.0" prefWidth="1004.0" style="-fx-background-color: #4682b4;" />
+      <Text layoutX="17.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="メッセージ：">
+         <font>
+            <Font size="11.0" />
+         </font></Text>
+   </children>
+</fx:root>

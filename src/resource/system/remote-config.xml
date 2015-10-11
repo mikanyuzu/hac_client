@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+    
+<!-- アカウント情報取得リモート呼び出し -->
+	<bean id="accountLookup" class="hac_client.component.remote.impl.RemoteBasic">
+		<property name="remoteService">
+			<ref bean="remoteAccService" />
+		</property>
+	</bean>
+	<bean id="remoteAccService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceUrl" value="http://${server.address}/hacbizweb/remote/AccountLookupService-hessian" />
+		<property name="serviceInterface" value="org.hac.remote.HttpRemoteCallInterface" />
+	</bean>
+	
+	<!-- 会社情報取得リモート呼び出し -->
+	<bean id="orgLookup" class="hac_client.component.remote.impl.RemoteBasic">
+		<property name="remoteService">
+			<ref bean="remoteOrgService" />
+		</property>
+	</bean>
+	<bean id="remoteOrgService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceUrl" value="http://${server.address}/hacbizweb/remote/CorpLookupService-hessian" />
+		<property name="serviceInterface" value="org.hac.remote.HttpRemoteCallInterface" />
+	</bean>
+	
+	<!-- 会社情報登録リモート呼び出し -->
+	<bean id="orgResgist" class="hac_client.component.remote.impl.RemoteBasic">
+		<property name="remoteService">
+			<ref bean="remoteOrgRegistService" />
+		</property>
+	</bean>
+	<bean id="remoteOrgRegistService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceUrl" value="http://${server.address}/hacbizweb/remote/CorpRegistService-hessian" />
+		<property name="serviceInterface" value="org.hac.remote.HttpRemoteCallInterface" />
+	</bean>
+	
+	<!-- 店舗情報取得リモート呼び出し -->
+	<bean id="storesLookup" class="hac_client.component.remote.impl.RemoteBasic">
+		<property name="remoteService">
+			<ref bean="remoteStoresInfoLookupService" />
+		</property>
+	</bean>
+	<bean id="remoteStoresInfoLookupService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceUrl" value="http://${server.address}/hacbizweb/remote/HubLookupByOrgMstNoService-hessian" />
+		<property name="serviceInterface" value="org.hac.remote.HttpRemoteCallInterface" />
+	</bean>
+	
+	<!-- 店舗基本情報取得リモート呼び出し -->
+	<bean id="storeDataLookup" class="hac_client.component.remote.impl.RemoteBasic">
+		<property name="remoteService">
+			<ref bean="remoteStoreInfoOnlyLookupService" />
+		</property>
+	</bean>
+	<bean id="remoteStoreInfoOnlyLookupService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceUrl" value="http://${server.address}/hacbizweb/remote/HubLookupByHubMstNoService-hessian" />
+		<property name="serviceInterface" value="org.hac.remote.HttpRemoteCallInterface" />
+	</bean>
+	
+	<!-- 店舗基本情報更新リモート呼び出し -->
+	<bean id="updateStoreData" class="hac_client.component.remote.impl.RemoteBasic">
+		<property name="remoteService">
+			<ref bean="remoteStoreInfoOnlyUpdateService" />
+		</property>
+	</bean>
+	<bean id="remoteStoreInfoOnlyUpdateService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceUrl" value="http://${server.address}/hacbizweb/remote/HubDataUpdateByHubMstNoService-hessian" />
+		<property name="serviceInterface" value="org.hac.remote.HttpRemoteCallInterface" />
+	</bean>
+	
+	<!-- ユーザ情報更新リモート呼び出し -->
+	<bean id="userDataUpdate" class="hac_client.component.remote.impl.RemoteBasic">
+		<property name="remoteService">
+			<ref bean="updateUserDataService" />
+		</property>
+	</bean>
+	<bean id="updateUserDataService" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceUrl" value="http://${server.address}/hacbizweb/remote/UserDataUpdateService-hessian" />
+		<property name="serviceInterface" value="org.hac.remote.HttpRemoteCallInterface" />
+	</bean>
+	
+	<!-- 予約情報取得リモート呼び出し -->
+	<bean id="reserveLookupByHunMngNo" class="hac_client.component.remote.impl.RemoteBasic">
+		<property name="remoteService">
+			<ref bean="reserveInfoLoookupByHubMngNo" />
+		</property>
+	</bean>
+	<bean id="reserveInfoLoookupByHubMngNo" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceUrl" value="http://${server.address}/hacbizweb/remote/ReserveListLookupByHubMstNoService-hessian" />
+		<property name="serviceInterface" value="org.hac.remote.HttpRemoteCallInterface" />
+	</bean>
+	
+	<!-- 予約情報登録リモート呼び出し -->
+	<bean id="reserveRegistByHunMngNo" class="hac_client.component.remote.impl.RemoteBasic">
+		<property name="remoteService">
+			<ref bean="reserveInfoRegistByHubMngNo" />
+		</property>
+	</bean>
+	<bean id="reserveInfoRegistByHubMngNo" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceUrl" value="http://${server.address}/hacbizweb/remote/ReserveRegistByHubMstNoService-hessian" />
+		<property name="serviceInterface" value="org.hac.remote.HttpRemoteCallInterface" />
+	</bean>
+	
+	<!-- 顧客情報登録リモート呼び出し -->
+	<bean id="custmerRegistByHunMngNo" class="hac_client.component.remote.impl.RemoteBasic">
+		<property name="remoteService">
+			<ref bean="cumsterInfoRegistByHubMngNo" />
+		</property>
+	</bean>
+	<bean id="cumsterInfoRegistByHubMngNo" class="org.springframework.remoting.caucho.HessianProxyFactoryBean">
+		<property name="serviceUrl" value="http://${server.address}/hacbizweb/remote/CustmerRegistByHubMstNoService-hessian" />
+		<property name="serviceInterface" value="org.hac.remote.HttpRemoteCallInterface" />
+	</bean>
+</beans>

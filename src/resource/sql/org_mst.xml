@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap>
+	<!--  -->
+	<update id="create_table_org_mst" >
+		create table org_mst (
+			id identity, 
+			org_mng_no char(10),
+			execute_user char(10),
+			execute_userpasswd char(10),
+			create_date int,
+			update_date int
+		)
+	</update>
+
+	<!--  -->
+	<insert id="insert_org_mst" 
+		parameterClass="java.util.HashMap">
+		insert
+			into org_mst
+		values (
+			1,
+			#org_mst_no#,
+			#execute_user#,
+			#execute_userpasswd#,
+			#create_date#,
+			#update_date#
+		)
+	</insert>
+	
+	<!--  -->
+	<select id="select_now_org_mng_no" 
+			parameterClass="java.util.HashMap" 
+			resultClass="java.util.HashMap">
+		select
+			org_mng_no
+		from 
+			org_mst
+		where 
+			id = 1
+	</select>
+	
+	<!--  -->
+	<update id="update_execute_user" 
+		parameterClass="java.util.HashMap">
+		update
+			org_mst
+		set 
+			execute_user = #execute_user#,
+			execute_userpasswd = #execute_userpasswd#
+		where 
+			id = 1
+	</update>
+	
+	<!--  -->
+	<update id="update_execute_user_passwd">
+		update
+			org_mst
+		set 
+			execute_userpasswd = #execute_userpasswd#
+		where 
+			id = 1
+	</update>
+	
+	<select id="select_execute_user"
+		parameterClass="java.util.HashMap"
+		resultClass="java.util.HashMap">
+		select 
+			*
+		from 
+			org_mst
+		where
+			id = 1
+	</select>
+	
+</sqlMap>
