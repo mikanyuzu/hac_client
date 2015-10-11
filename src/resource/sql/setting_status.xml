@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap>
+	<update id="create_table_setting_status" parameterClass="java.util.HashMap">
+		create table setting_status (
+			id identity, 
+			status int,
+			create_date int,
+			update_date int
+		)
+	</update>
+	
+	<select id="show_setting_status" parameterClass="java.util.HashMap" 
+		resultClass="java.util.HashMap">
+		select 
+			status
+		from 
+			setting_status
+		where 
+			id = 1
+	</select>
+	
+	<update id="update_setting_status" parameterClass="java.util.HashMap">
+		update
+			setting_status
+		set 
+			status = #status#,
+			update_date = #update_date#
+		where
+			id = 1 
+	</update>
+	
+	<insert id="insert_setttin_status" parameterClass="java.util.HashMap">
+		insert 
+			into setting_status
+		values (
+			1,
+			#status#,
+			#create_date#,
+			#update_date#
+		)
+	</insert>
+</sqlMap>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane style="-fx-font-size: 11px;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hac_client.controller.BaseController">
+	<children>
+		<Text layoutX="17.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ログインユーザ:">
+         <font>
+            <Font size="10.0" />
+         </font></Text>
+		<Text layoutX="263.0" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ログイン時間:">
+         <font>
+            <Font size="10.0" />
+         </font></Text>
+		<Label fx:id="userAccount" layoutX="96.0" layoutY="10.0" prefHeight="17.0" prefWidth="155.0" text="loginUser">
+         <font>
+            <Font size="12.0" />
+         </font></Label>
+		<Label fx:id="loginTime" layoutX="336.0" layoutY="10.0" prefHeight="17.0" prefWidth="155.0" text="loginTime">
+         <font>
+            <Font size="12.0" />
+         </font></Label>
+      <MenuButton layoutX="14.0" layoutY="31.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="120.0" text="顧客管理" textAlignment="CENTER">
+         <font>
+            <Font size="11.0" />
+         </font>
+         <items>
+            <MenuItem mnemonicParsing="false" onAction="#clickReserve" text="予約確認" />
+            <MenuItem mnemonicParsing="false" onAction="#clickCustmer" text="顧客カルテ確認" />
+         </items>
+      </MenuButton>
+      <MenuButton layoutX="136.0" layoutY="31.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="120.0" text="販売促進" textAlignment="CENTER">
+         <font>
+            <Font size="11.0" />
+         </font>
+         <items>
+            <MenuItem mnemonicParsing="false" text="DM一括送信" />
+            <MenuItem mnemonicParsing="false" text="DMラベル作成" />
+         </items>
+      </MenuButton>
+      <MenuButton layoutX="258.0" layoutY="31.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="120.0" text="設定" textAlignment="CENTER">
+        <items>
+          <MenuItem mnemonicParsing="false" onAction="#clickUserSetting" text="システム設定" />
+        </items>
+         <font>
+            <Font size="11.0" />
+         </font>
+      </MenuButton>
+      <Hyperlink layoutX="813.0" layoutY="33.0" onAction="#clickTop" text="TOPへ">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Hyperlink>
+      <Hyperlink layoutX="880.0" layoutY="33.0" onAction="#clickLogout" text="ログアウト">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Hyperlink>
+	</children>
+</AnchorPane>

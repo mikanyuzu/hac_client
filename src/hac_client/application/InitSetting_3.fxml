@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="129.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="社内管理ツール初期登録" textAlignment="CENTER" wrappingWidth="341.8340015411377">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <Text layoutX="129.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="アカウント情報を入力頂いたメールアドレス宛に送信しております" />
+      <Text layoutX="129.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="以下へメールに記載される店舗管理No、ユーザID、パスワードを入力し" />
+      <Hyperlink layoutX="447.0" layoutY="381.0" text="ログインする">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Hyperlink>
+      <Text layoutX="129.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="仮登録が完了しました" />
+      <Text layoutX="129.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ログインを行ってください" />
+      <Text layoutX="129.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="店舗管理No" />
+      <Text layoutX="129.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ユーザID" />
+      <Text layoutX="129.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="パスワード" />
+      <TextField layoutX="230.0" layoutY="249.0" />
+      <TextField layoutX="230.0" layoutY="282.0" />
+      <TextField layoutX="230.0" layoutY="315.0" />
+   </children>
+</AnchorPane>

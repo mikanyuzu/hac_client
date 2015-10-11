@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="195.0" prefWidth="497.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hac_client.controller.CommonModalDialogContorller">
+   <children>
+      <Button layoutX="85.0" layoutY="132.0" mnemonicParsing="false" onAction="#clickOk" prefHeight="17.0" prefWidth="143.0" text="OK">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Button layoutX="281.0" layoutY="132.0" mnemonicParsing="false" onAction="#clickCancel" prefHeight="17.0" prefWidth="143.0" text="キャンセル">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <Label fx:id="dialogMessage" alignment="TOP_LEFT" layoutX="21.0" layoutY="23.0" prefHeight="77.0" prefWidth="458.0">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

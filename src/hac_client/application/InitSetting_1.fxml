@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hac_client.controller.InitSetting1Controller">
+   <children>
+      <Text layoutX="129.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="社内管理ツール初期登録" textAlignment="CENTER" wrappingWidth="341.8340015411377">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <Text layoutX="129.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ご利用頂くにあたり、初期設定が必要となります" />
+      <Text layoutX="129.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="以下に会社管理Noを入力してください" />
+      <Hyperlink layoutX="512.0" layoutY="381.0" onAction="#clickNext" text="次へ">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Hyperlink>
+      <Text layoutX="129.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="当ツールをご利用頂きありがとうございます" />
+      <Text layoutX="129.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="会社情報が未登録の場合はこのまま「次へ」を押下してください" />
+      <TextField fx:id="orgMngNo" layoutX="249.0" layoutY="288.0" promptText="会社管理No" />
+      <Text layoutX="129.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="会社管理No" />
+      <Label fx:id="appMessage" layoutX="129.0" layoutY="249.0" prefHeight="27.0" prefWidth="443.0" wrapText="true" />
+   </children>
+</AnchorPane>
